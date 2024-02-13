@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 import { ShareIcon } from "./ShareIcon";
+import { useDocContext } from "@/context/docContext";
 
 const Header = () => {
+    const { doc } = useDocContext();
     const [title, setTitle] = useState('Untitled');
+
+    const handleShareClicked = () => {
+
+    }
 
     return (
         <div className="flex flex-row justify-between items-center">
@@ -26,7 +32,7 @@ const Header = () => {
             </div>
             <div>
                 <button
-                    onClick={() => { console.log('publish clicked') }}
+                    onClick={handleShareClicked}
                     className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                     <span className="mr-2">Share</span>
                     <ShareIcon />

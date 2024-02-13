@@ -1,11 +1,17 @@
 "use client";
 
-import { DisabledSSREditor } from "@/components/DisabledSSREditor";
+import { DisabledSSREditor } from "@/components/editor/DisabledSSREditor";
 import Header from "@/components/Header";
-import { useState } from "react";
+import { useDocContext } from "@/context/docContext";
+import { useEffect, useState } from "react";
 
 const Edit = () => {
+    const { setDoc } = useDocContext();
     const [content, setContent] = useState<string>();
+
+    useEffect(() => {
+        content && setDoc!({ content: content });
+    }, [content]);
 
     return (
         <main >
