@@ -6,7 +6,7 @@ import { DocContextProvider } from "@/context/docContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ShareCtxt",
+  title: "Wong",
   description: "Share Cool Text For Free",
 };
 
