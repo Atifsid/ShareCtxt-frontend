@@ -1,10 +1,10 @@
 'use client'
-import { Doc } from "@/modal/doc";
+import { Document } from "@/core/dtos/api-modal/Document";
 import React, { ReactNode, createContext, useContext, useState } from "react";
 
 interface DocContextProps {
-    doc?: Doc;
-    setDoc?: (doc: Doc) => void;
+    doc?: Document;
+    setDoc?: (doc: Document) => void;
 }
 
 const DocContext = createContext<DocContextProps | undefined>({});
@@ -18,7 +18,7 @@ export const useDocContext = () => {
 };
 
 export const DocContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [doc, setDoc] = useState<Doc | undefined>();
+    const [doc, setDoc] = useState<Document | undefined>();
 
     return (
         <DocContext.Provider value={{ doc, setDoc }}>

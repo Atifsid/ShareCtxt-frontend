@@ -1,4 +1,4 @@
-import { DocProps } from "@/modal/DocProps";
+import { DocProps } from "@/core/dtos/types/DocProps";
 import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/react/style.css";

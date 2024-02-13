@@ -1,8 +1,7 @@
 "use client";
-
 import { DisabledSSREditor } from "@/components/editor/DisabledSSREditor";
 import Header from "@/components/Header";
-import { useDocContext } from "@/context/docContext";
+import { useDocContext } from "@/core/context/docContext";
 import { useEffect, useState } from "react";
 
 const Edit = () => {
@@ -15,7 +14,7 @@ const Edit = () => {
 
     return (
         <main >
-            <div className="px-24 my-10"><Header /></div>
+            <div className="px-24 my-10"><Header isEdit={true} /></div>
             <div className="flex flex-col items-center justify-between px-24">
                 <div className="h-full w-full">
                     <DisabledSSREditor onChange={(value: string) => setContent(value)} />
