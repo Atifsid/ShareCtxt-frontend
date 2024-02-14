@@ -4,9 +4,13 @@ import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/react/style.css";
 
 const Editor = ({ onChange, initialContent, editable = true }: DocProps) => {
+    let data: PartialBlock<DefaultBlockSchema, DefaultInlineContentSchema, DefaultStyleSchema>[] = []
+    if (initialContent) {
+        data = JSON.parse(initialContent)
+    }
     const editor: BlockNoteEditor = useBlockNote({
         editable,
-        initialContent: initialContent ? JSON.parse(initialContent) as PartialBlock<DefaultBlockSchema, DefaultInlineContentSchema, DefaultStyleSchema>[] : undefined,
+        initialContent: initialContent ? data : undefined,
         onEditorContentChange: (editor) => {
             editable && onChange!(JSON.stringify(editor.topLevelBlocks, null, 2));
         }
