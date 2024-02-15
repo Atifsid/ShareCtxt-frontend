@@ -12,7 +12,7 @@ const View = () => {
     const docService = new DocumentService();
     const params = useParams<{ id: string }>();
 
-    const [fetchedDoc, setFetchedDoc] = useState<Document>()
+    const [fetchedDoc, setFetchedDoc] = useState<Document>();
 
     useEffect(() => {
         setLoading(true);
@@ -29,7 +29,7 @@ const View = () => {
 
     return (
         <main >
-            {loading && fetchedDoc ? <>
+            {!loading && fetchedDoc ? <>
                 <div className="px-24 my-10"><Header isEdit={false} initialTitle={fetchedDoc.title} /></div>
                 <div className="flex flex-col items-center justify-between px-24">
                     <div className="h-full w-full">
