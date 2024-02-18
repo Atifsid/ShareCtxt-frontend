@@ -5,11 +5,14 @@ import { useDocContext } from "@/core/context/docContext";
 import DocumentService from "@/api/services/documentService/DocumentService";
 import { Document } from "@/core/dtos/api-modal/Document";
 import Modal from "./Modal";
+import { UI_BASE_URL } from "@/core/constants/api-url-constant";
+import { useRouter } from "next/navigation";
 
 const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: string }) => {
+    const router = useRouter();
     const { doc } = useDocContext();
     const [title, setTitle] = useState('');
-    const [id, setId] = useState<string>();
+    const [id, setId] = useState<string | undefined>();
 
     const docService = new DocumentService();
 
@@ -57,7 +60,10 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
                 <ShareIcon />
             </button>}
 
-            {id && id != '' && <Modal id={id} />}
+            {id && id != '' && <Modal id={id} handleCreateNew={() => {
+                setId(undefined);
+                router.replace(`${UI_BASE_URL}/edit`)
+            }} />}
         </div>
     )
 }

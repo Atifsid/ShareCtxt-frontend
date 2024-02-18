@@ -1,8 +1,12 @@
 import { UI_BASE_URL } from "@/core/constants/api-url-constant";
 import Link from "next/link";
 
-function Modal({ id }: Readonly<{ id: string }>) {
+type ModalProps = {
+    id: string;
+    handleCreateNew: () => void
+}
 
+function Modal({ id, handleCreateNew }: ModalProps) {
     return (
         <dialog
             className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
@@ -35,9 +39,9 @@ function Modal({ id }: Readonly<{ id: string }>) {
                             </div>
                         </div>
                         <div className="flex float-end mt-5">
-                            <Link href={`${UI_BASE_URL}/edit`} className="hover:bg-black border hover:text-white border-black text-black font-bold py-2 px-4 rounded">
+                            <button onClick={handleCreateNew} className="hover:bg-black border hover:text-white border-black text-black font-bold py-2 px-4 rounded">
                                 Create new
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 </div>

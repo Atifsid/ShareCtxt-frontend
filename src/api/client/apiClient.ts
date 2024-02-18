@@ -36,7 +36,7 @@ const buildUrl = (endpoint: string, queryParams?: Record<string, any>): string =
             .join('&');
         url += `?${queryString}`;
     }
-    console.log("Making request to :", url);
+    // console.log("Making request to :", url);
     return url;
 };
 
