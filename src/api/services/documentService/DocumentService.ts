@@ -15,7 +15,7 @@ export default class DocumentService {
 
     public async saveDocument(req: Document) {
         try {
-            const res = await ApiClient.PostApi<BaseAPIResponseModel<number>>(`${ApiUrl.saveDocument}`, req);
+            const res = await ApiClient.PostApi<BaseAPIResponseModel<string>>(`${ApiUrl.saveDocument}`, req);
             return res;
         } catch (error) {
             return console.log('error in saveDocument', error);

@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-function Modal({ id }: Readonly<{ id: number }>) {
+function Modal({ id }: Readonly<{ id: string }>) {
     const searchParams = useSearchParams();
     const modal = searchParams.get("modal");
 

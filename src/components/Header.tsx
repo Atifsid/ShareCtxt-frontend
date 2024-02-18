@@ -11,7 +11,7 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
     const router = useRouter();
     const { doc } = useDocContext();
     const [title, setTitle] = useState('');
-    const [id, setId] = useState<number>();
+    const [id, setId] = useState<string>();
 
     const docService = new DocumentService();
 
@@ -62,7 +62,7 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
                 <ShareIcon />
             </button>}
 
-            {id && id > 0 && <Modal id={id} />}
+            {id && id != '' && <Modal id={id} />}
         </div>
     )
 }
