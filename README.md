@@ -1,4 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## INTRODUCTION
+
+Wong is a user-friendly, lightweight platform that allows users to :
+
+1.  **CREATE**
+2.  **SHARE**
+3.  **VIEW ...**
+
+(notion style) textual content without **AUTHENTICATION** that too for **FREE !!!**
+
+## MOTIVATION
+
+Wong was built to understand what, how and why is serverless.
+
+After understanding I wanted to try it out and build something with a simple use-case that doesn't put on heavy load on [Cloudflare ☺️](https://www.cloudflare.com/)
+
+Hence, Wong was born. 🤘
+
+## TODO
+- [ ] Drop down for below options or be creative enough and suggest other ways
+- [ ] Add about us (preferred) or Made with love by Atif -> My Portfolio link (coming soon :3)
+- [ ] Add github repo linking
+- add more ...
+
+## FOSS
+
+Yes, Wong is and will always be open-source so,
+
+*   I'm open to feedback, suggestions, and constructive criticism.
+*   Do raise a PR if you think you can fix something (please do :3)
+
+### Credits
+
+Shout out to [@harkirat](https://twitter.com/kirat_tw) and [@100xdevs](https://twitter.com/100xdevs) for introducing me to backend and serverless deployment in **Cohort 2.0**
+
 
 ## Getting Started
 
