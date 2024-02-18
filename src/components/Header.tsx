@@ -10,8 +10,8 @@ import { useRouter } from "next/navigation";
 
 const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: string }) => {
     const router = useRouter();
-    const { doc } = useDocContext();
-    const [title, setTitle] = useState('');
+    const { doc, setDoc } = useDocContext();
+    const [title, setTitle] = useState<string>();
     const [id, setId] = useState<string | undefined>();
 
     const docService = new DocumentService();
@@ -62,6 +62,8 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
 
             {id && id != '' && <Modal id={id} handleCreateNew={() => {
                 setId(undefined);
+                setTitle(undefined);
+                setDoc!({});
                 router.replace(`${UI_BASE_URL}/edit`)
             }} />}
         </div>
