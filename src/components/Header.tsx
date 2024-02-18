@@ -5,10 +5,8 @@ import { useDocContext } from "@/core/context/docContext";
 import DocumentService from "@/api/services/documentService/DocumentService";
 import { Document } from "@/core/dtos/api-modal/Document";
 import Modal from "./Modal";
-import { useRouter } from 'next/navigation';
 
 const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: string }) => {
-    const router = useRouter();
     const { doc } = useDocContext();
     const [title, setTitle] = useState('');
     const [id, setId] = useState<string>();
@@ -38,10 +36,6 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
         }
     }
 
-    useEffect(() => {
-        router.replace("https://wong-rho.vercel.app/edit?modal=true");
-    }, [id]);
-
     return (
         <div className="flex flex-row justify-between items-center">
             <div className="relative w-1/2" data-te-input-wrapper-init>
@@ -56,8 +50,9 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
                 />
             </div>
             {isEdit && <button
+                disabled={title === '' && doc?.content === ''}
                 onClick={handleShareClicked}
-                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                className={`bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center`}>
                 <span className="mr-2">Share</span>
                 <ShareIcon />
             </button>}
