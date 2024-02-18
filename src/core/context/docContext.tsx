@@ -1,6 +1,6 @@
 'use client'
 import { Document } from "@/core/dtos/api-modal/Document";
-import React, { ReactNode, createContext, useContext, useState } from "react";
+import React, { ReactNode, createContext, useContext, useMemo, useState } from "react";
 
 interface DocContextProps {
     doc?: Document;
@@ -21,7 +21,7 @@ export const DocContextProvider: React.FC<{ children: ReactNode }> = ({ children
     const [doc, setDoc] = useState<Document | undefined>();
 
     return (
-        <DocContext.Provider value={{ doc, setDoc }}>
+        <DocContext.Provider value={useMemo(() => ({ doc, setDoc }), [doc, setDoc])}>
             {children}
         </DocContext.Provider>
     )
