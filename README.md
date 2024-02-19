@@ -17,10 +17,11 @@ After understanding I wanted to try it out and build something with a simple use
 Hence, Wong was born. 🤘
 
 ## TODO
+- [ ] Init env variables rather than using static variables
 - [ ] Drop down for below options or be creative enough and suggest other ways
 - [ ] Add about us (preferred) or Made with love by Atif -> My Portfolio link (coming soon :3)
 - [ ] Add github repo linking
-- add more ...
+    - add more ...
 
 ## FOSS
 
