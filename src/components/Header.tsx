@@ -37,7 +37,7 @@ const Header = ({ isEdit, initialTitle }: { isEdit: boolean; initialTitle?: stri
     }
 
     return (
-        <div className="flex flex-row justify-between items-center">
+        <div className={`flex ${window.screen.availWidth <= 768 ? 'flex-col' : 'flex-row'} justify-between items-center`}>
             <div className="relative w-1/2" data-te-input-wrapper-init>
                 <input
                     type="text"
